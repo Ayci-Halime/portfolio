@@ -1,5 +1,289 @@
 *{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* font-family: 'Genos', sans-serif;
+font-family: 'Krona One', sans-serif;
+font-family: 'Laila', serif;
+font-family: 'Ledger', serif; */
+
+body{
+    background: rgba(35, 39, 41, 0.70);
+    color: white;
+}
+nav{
+    /* yan yana alabilmek icin */
+    display: flex;
+    /* sayfada iki ayri uclarina yerlestirdi */
+    justify-content: space-between;
+    /* yatayda ayni hizaya geldi */
+    align-items: center;
+    /* yazi büyüklügü */
+    font-size: 0.8rem;
+     /* yazi tipi */
+    font-family: 'Laila', serif;
+
+}
+ul{
+    /* listedeki noktalardan kurtulduk */
+    list-style-type: none;
+     /* yan yana alabilmek icin */
+    display: flex;
+    /* tek tarafli margin yaptik */
+    margin-right: 1rem;
+
+}
+li{
+    /* liste elemanlarini sisirdik */
+    padding: 10px;
+   
+    letter-spacing: 1.2px;
+}
+nav p{
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    font-size: 2rem;
+    color:#34B096;
+    font-weight: 600;
+      /* tek tarafli margin yaptik */
+    margin-left: 1rem;
+
+}
+/* ------------------------------------------------------------------------------------- */
+
+header{
+   
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+header::before{
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("./images/backround.jpg");
+    /* resmi alana tam yarlestirir */
+    background-position: center;
+    background-size: cover;
+    /* resmin tekrarini önler */
+    background-repeat: no-repeat;
+
+    /* bulaniklastirmak icin */
+    opacity: 0.3;
+
+    /* katman yaptik */
+    z-index:1;
+
+}
+.inner{
+    width: 350px;
+    /* katman yaptik */
+    z-index: 2;
+    background-color:#171A1D ;
+    border-radius: 300px 300px 0 0;
+}
+.inner .photo{
+    width: 350px;
+    height: 350px;
+
+    /* hangi alanda ortalama yapilacaksa o alana muhtesem üclü yerlestirilir. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.inner .photo img{
+    width: 330px;
+    height: 330px;
+    border-radius: 300px;
+    border: 10px solid rgba(52, 176, 150, 0.50);
+
+    background: #34B096;
     
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.name{
+    /* yazilari bu alanda ortaladik. */
+    text-align: center;
+    font-family: 'Krona One', sans-serif;
+    line-height: 2rem;
+}
+.name h1{
+    
+    letter-spacing: 10px;
+    font-weight: 400;
+    font-size: 1.3rem;
+
+}
+.name p{
+
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+
+}
+.social{
+    display: flex;
+    justify-content: space-evenly;
+    color: black;
+
+}
+i{
+    /* iconlarin boyutu */
+    font-size: 2.2rem;
+    padding: 10px;
+}
+.aboutMe, .skills,.projects{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.aboutMe h2,.skills h2,.projects h2{
+    font-family: 'Genos', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    font-weight: 300;
+}
+.aboutMe p,.projects p{
+    font-family: 'Ledger', serif;
+    letter-spacing: 0.5px;
+}
+.aboutMe span,.projects span{
+    color: #34B096;
+}
+
+.personal{
+    display: flex;
+    justify-content: space-around;
+
+
+}
+.detail{
+    margin-top: 1rem;
+    padding: 1rem 0;
+    width: 50%;
+}
+.detail h3, .interest h3{
+    font-family: 'Ledger', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+
+}
+.detailPart{
+    display: flex;
+    margin-top: 1rem;
+ 
+}
+.leftDetail,.rightDetail{
+margin-right: 2rem;
+}
+.leftDetail{
+    color: #34B096;
+}
+
+.interest{
+    width: 50%;
+    margin-top: 1rem;
+    padding: 1rem 0;
+
+
+
+}
+.interestIcons{
+    margin-top: 1rem;
+   
+}
+.interestIcons i{
+
+
+    /* iconlari düzenledik. genislik ve yükseklik ve ortalama yaptik. */
+    width: 70px;
+    height: 70px;
+    text-align: center;
+
+
+    /* iconlarin ic resimlerinin boyutunu ayarladik */
+    font-size: 2.5rem;
+    /* icon ic resim rengi */
+    color: black;
+    /* icon arka fon */
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin: 0.5rem;
+    /* gölge */
+    box-shadow: 1px 1px 2px black;
+}
+.aboutMe button{
+    /* arkadaki arka fonu miras aldi */
+    background-color: inherit;
+    border: none;
+    border: 1px solid white;
+    padding: 1rem 5rem;
+
+}
+.aboutMe button a{
+    /* butondaki cizgiyi kaldirdik */
+    text-decoration: none;
+    color: white;
+}
+
+.skillPart{
+   
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.skillsLeft,.skillsRight{
+    flex: 1;
+    padding: 1rem;
+ 
+    
+}
+
+.skillPart h3{
+    font-family: "Ledger";
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.projectsPart{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+
+    /* resimler arasina bosluk koyar */
+    gap: 10px;
+/* resimler sayfaya sigmazsa otamatik asagi iner */
+flex-wrap: wrap;
+}
+.projectsPart img{
+    /* resimlerin sayfada kapladigi alani ayarladik */
+    width: 40%;
+    
+}
+footer{
+
+    font-family: "Laila";
+    font-size: 0.8rem;
+    letter-spacing: 1.2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 }
 
 
